@@ -1,26 +1,26 @@
-# 🧬 Genome Clustering & Variant Classification API
+# Genome Clustering & Variant Classification API
 
-Production-ready app for clustering and classifying SARS-CoV-2 genome sequences.
+Application for clustering and classifying SARS-CoV-2 genome sequences.
 
-## 🔧 Local Setup
+## Local Setup
 
 ```bash
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-## 🐳 Docker
+## Docker
 
 ```bash
 docker build -t genome-api .
 docker run -p 8000:8000 genome-api
 ```
 
-## 🌍 Streamlit
+## Streamlit
 
 Update streamlit_app/app.py with your Render API URL and deploy on Streamlit Cloud.
 
-## 📡 API (Hosted via Render)
+## API (Hosted via Render)
 
 - `/health`
 - `/cluster`
