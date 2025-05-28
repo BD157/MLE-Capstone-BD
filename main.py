@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from app.utils import process_sequence, classify_sequence
+from utils import process_sequence, classify_sequence
 
 app = FastAPI()
 
