@@ -20,7 +20,7 @@ docker run -p 8000:8000 genome-api
 
 Update streamlit_app/app.py with your Render API URL and deploy on Streamlit Cloud.
 
-## 📡 API (Hosted via Render)
+## API (Hosted via Render)
 
 - `/health`
 - `/cluster`
