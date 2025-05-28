@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+gensim
+scikit-learn
+umap-learn
+numpy
+streamlit
+requests
+ray
