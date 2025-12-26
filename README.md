@@ -1,17 +1,13 @@
-# End-to-End ML Capstone: 
-#           Genome Clustering & Variant Classification
+# End-to-End ML Capstone 
+## Genome Clustering & Variant Classification
 
 A scalable API for SARS-CoV-2 genome clustering and variant classification that transitions from experimental notebooks to a production-ready FastAPI service. The system supports containerized deployment and is designed with automated CI/CD pipelines in mind, making it reproducible and cloud-deployable.
-
 This project aims to support lineage-based clustering for public health analysis, while focusing on practical ML engineering concerns such as turning notebook-based experiments into reusable code, organizing logic so it can be maintained over time, and making the system easier to run in real environments.
 
----
-
-## Executive Summary
+## Summary
 
 Many machine learning projects stall at exploratory notebooks and never mature into deployable systems. This repository demonstrates how genome-based ML workflows can evolve from research code into a structured, service-oriented application suitable for production environments.
-
-The focus is as much on **engineering discipline** as on modeling—showing how to move from analysis to inference with scalability and maintainability in mind.
+The focus is as much on **engineering discipline** as on modeling, showing how to move from analysis to inference with scalability and maintainability in mind.
 
 ---
 
@@ -20,8 +16,6 @@ The focus is as much on **engineering discipline** as on modeling—showing how 
 - Move work out of notebooks into reusable, maintainable code
 - Expose clustering and classification through a runnable API
 - Set up to later support testing, automation, and deployment
-
----
 
 ## Problem Statement
 
@@ -48,12 +42,17 @@ to reproduce, hard to scale, and not designed to be reused by others. This proje
 
 ---
 
+## Repository Structure
+
 ## Local Setup
 
 ```bash
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
+After running, the API will be available at:
+
+http://localhost:8000
 
 ## Docker
 
@@ -61,13 +60,45 @@ uvicorn app.main:app --reload
 docker build -t genome-api .
 docker run -p 8000:8000 genome-api
 ```
+This enables consistent, reproducible execution across environments.
+
+## API Endpoints (Hosted via Render)
+
+The service exposes the following endpoints:
+
+GET /health
+Health check for service readiness
+POST /cluster
+Cluster genome sequences
+POST /classify
+Classify genome sequences into variants
+Interactive API documentation is available via:
+/docs (Swagger UI)
+/redoc (ReDoc)
 
 ## Streamlit
 
 Update streamlit_app/app.py with your Render API URL and deploy on Streamlit Cloud.
 
-## API (Hosted via Render)
+---
 
-- `/health`
-- `/cluster`
-- `/classify`
+## Engineering Focus
+
+This project emphasizes:
+- Clear separation between research and inference code
+- Reproducibility and environment consistency
+- Incremental progression toward production ML systems
+- Maintainability over one-off experimentation
+
+## Future Work
+
+- Move remaining model logic out of notebooks and into `src/`
+- Add unit tests and basic integration tests
+- Set up continuous integration for automated checks
+- Expand evaluation metrics and result reporting
+- Improve how models are versioned and managed over time
+
+
+## Author
+
+Built and maintained by BD as part of a machine learning engineering capstone project.
