@@ -1,4 +1,5 @@
-# End-to-End ML Capstone: Genome Clustering & Variant Classification
+# End-to-End ML Capstone: 
+#           Genome Clustering & Variant Classification
 
 A scalable API for SARS-CoV-2 genome clustering and variant classification that transitions from experimental notebooks to a production-ready FastAPI service. The system supports containerized deployment and is designed with automated CI/CD pipelines in mind, making it reproducible and cloud-deployable.
 
