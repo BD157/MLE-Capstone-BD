@@ -44,11 +44,38 @@ to reproduce, hard to scale, and not designed to be reused by others. This proje
 
 ## Repository Structure
 
+```
+MLE-Capstone-BD/
+├── api/                          # FastAPI backend
+│   ├── __init__.py
+│   ├── main.py                   # API endpoints (/health, /cluster, /classify)
+│   └── utils.py                  # Sequence processing and classification logic
+├── frontend/
+│   └── app.py                    # Streamlit UI
+├── notebooks/
+│   ├── capstone/                 # Core capstone notebooks and scripts
+│   │   ├── Models_in_Google_Colab_Model_Building_BD_V1.ipynb
+│   │   ├── Capstone_AWS_Data_Cleaning_BD.ipynb
+│   │   ├── Step_8_Method_2_Memory_Batching.ipynb
+│   │   ├── Step_8_Method_3_Ray_Parallel.ipynb
+│   │   └── data_cleaning_merging_in_google_colab.py
+│   └── mini-projects/            # Supporting MLE mini-projects
+│       ├── Student_MLE_MiniProject_Customer_ChurnModel_BD.ipynb
+│       ├── Student_MLE_MiniProject_Flask_BD.ipynb
+│       ├── Student_MLE_MiniProject_ML_BD.ipynb
+│       └── Student_MLE_MiniProject_Recommendation_Engines_BD.ipynb
+├── datasets/                     # Dataset acquisition examples (NCBI, ENA, CDC)
+├── research/                     # Embedding research examples (Word2Vec, K-mer, Virtifier)
+├── Dockerfile
+├── render.yaml
+└── requirements.txt
+```
+
 ## Local Setup
 
 ```bash
 pip install -r requirements.txt
-uvicorn app.main:app --reload
+uvicorn api.main:app --reload
 ```
 After running, the API will be available at:
 
@@ -78,7 +105,7 @@ Interactive API documentation is available via:
 
 ## Streamlit
 
-Update streamlit_app/app.py with your Render API URL and deploy on Streamlit Cloud.
+Update `frontend/app.py` with your Render API URL and deploy on Streamlit Cloud.
 
 ---
 
