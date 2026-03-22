@@ -1,44 +1,7 @@
-# End-to-End ML Capstone 
-## Genome Clustering & Variant Classification
+# Genome Clustering & Variant Classification
+### End-to-End ML Capstone
 
-A scalable API for SARS-CoV-2 genome clustering and variant classification that transitions from experimental notebooks to a production-ready FastAPI service. The system supports containerized deployment and is designed with automated CI/CD pipelines in mind, making it reproducible and cloud-deployable.
-This project aims to support lineage-based clustering for public health analysis, while focusing on practical ML engineering concerns such as turning notebook-based experiments into reusable code, organizing logic so it can be maintained over time, and making the system easier to run in real environments.
-
-## Summary
-
-Many machine learning projects stall at exploratory notebooks and never mature into deployable systems. This repository demonstrates how genome-based ML workflows can evolve from research code into a structured, service-oriented application suitable for production environments.
-The focus is as much on **engineering discipline** as on modeling, showing how to move from analysis to inference with scalability and maintainability in mind.
-
----
-
-**Core goals:**
-- Build an end-to-end machine learning project, from data analysis to model inference
-- Move work out of notebooks into reusable, maintainable code
-- Expose clustering and classification through a runnable API
-- Set up to later support testing, automation, and deployment
-
-## Problem Statement
-
-In practice, genomic surveillance work is often done using one-off scripts and exploratory notebooks. These approaches work for analysis, but they are difficult
-to reproduce, hard to scale, and not designed to be reused by others. This project aims to turn SARS-CoV-2 genome clustering and variant classification into a reusable service, so the same analysis can be run consistently, shared across teams, and deployed in real environments.
-
----
-
-## Project Scope
-
-### Implemented
-- Code for clustering genome sequences and classifying variants
-- A FastAPI service for running model inference
-- Support for running locally and with Docker
-- Basic service endpoints, including a health check
-- An optional Streamlit UI for interacting with the API
-
-### Planned Extensions
-- Move more model and data logic into reusable Python modules
-- Add basic tests and automation
-- Improve model evaluation and result reporting
-- Track model and data changes over time
-- Make deployment and updates more robust
+This project turns SARS-CoV-2 genome analysis from exploratory notebooks into a deployable, service-oriented ML system. It covers the full pipeline — data cleaning, model building, and exposing inference through a FastAPI backend with a Streamlit frontend — with a focus on engineering discipline alongside the modeling work.
 
 ---
 
@@ -47,13 +10,12 @@ to reproduce, hard to scale, and not designed to be reused by others. This proje
 ```
 MLE-Capstone-BD/
 ├── api/                          # FastAPI backend
-│   ├── __init__.py
-│   ├── main.py                   # API endpoints (/health, /cluster, /classify)
+│   ├── main.py                   # Endpoints: /health, /cluster, /classify
 │   └── utils.py                  # Sequence processing and classification logic
 ├── frontend/
 │   └── app.py                    # Streamlit UI
 ├── notebooks/
-│   ├── capstone/                 # Core capstone notebooks and scripts
+│   ├── capstone/                 # Core capstone work
 │   │   ├── 01_aws_data_cleaning.ipynb
 │   │   ├── 02_model_building.ipynb
 │   │   ├── 03_memory_batching.ipynb
@@ -64,12 +26,14 @@ MLE-Capstone-BD/
 │       ├── 02_customer_churn_model.ipynb
 │       ├── 03_flask_deployment.ipynb
 │       └── 04_recommendation_engines.ipynb
-├── datasets/                     # Dataset acquisition examples (NCBI, ENA, CDC)
-├── research/                     # Embedding research examples (Word2Vec, K-mer, Virtifier)
+├── datasets/                     # Data acquisition scripts (NCBI, ENA, CDC)
+├── research/                     # Embedding experiments (Word2Vec, K-mer, Virtifier)
 ├── Dockerfile
 ├── render.yaml
 └── requirements.txt
 ```
+
+---
 
 ## Local Setup
 
@@ -77,55 +41,50 @@ MLE-Capstone-BD/
 pip install -r requirements.txt
 uvicorn api.main:app --reload
 ```
-After running, the API will be available at:
 
-http://localhost:8000
+API available at `http://localhost:8000`
 
 ## Docker
 
 ```bash
 docker build -t genome-api .
-docker run -p 8000:8000 genome-api
+docker run -p 8000:10000 genome-api
 ```
-This enables consistent, reproducible execution across environments.
-
-## API Endpoints (Hosted via Render)
-
-The service exposes the following endpoints:
-
-GET /health
-Health check for service readiness
-POST /cluster
-Cluster genome sequences
-POST /classify
-Classify genome sequences into variants
-Interactive API documentation is available via:
-/docs (Swagger UI)
-/redoc (ReDoc)
 
 ## Streamlit
 
-Update `frontend/app.py` with your Render API URL and deploy on Streamlit Cloud.
+Update the `API_URL` in `frontend/app.py` with your Render URL, then deploy on Streamlit Cloud.
 
 ---
 
-## Engineering Focus
+## API Endpoints
 
-This project emphasizes:
-- Clear separation between research and inference code
-- Reproducibility and environment consistency
-- Incremental progression toward production ML systems
-- Maintainability over one-off experimentation
+Hosted via [Render](https://render.com). Interactive docs at `/docs` (Swagger) and `/redoc`.
 
-## Future Work
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/health` | Health check |
+| POST | `/cluster` | Cluster a genome sequence |
+| POST | `/classify` | Classify a sequence into a variant lineage |
 
-- Move remaining model logic out of notebooks and into `src/`
-- Add unit tests and basic integration tests
-- Set up continuous integration for automated checks
-- Expand evaluation metrics and result reporting
-- Improve how models are versioned and managed over time
+---
 
+## Scope
+
+**Done**
+- Data cleaning and model building notebooks
+- FastAPI inference service (cluster + classify endpoints)
+- Streamlit UI
+- Docker + Render deployment
+
+**Planned**
+- Replace placeholder model logic with trained models
+- Add unit and integration tests
+- Set up CI/CD
+- Version models and datasets
+
+---
 
 ## Author
 
-Built and maintained by BD as part of a machine learning engineering capstone project.
+Built by BD as part of a machine learning engineering capstone.
