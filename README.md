@@ -54,16 +54,16 @@ MLE-Capstone-BD/
 │   └── app.py                    # Streamlit UI
 ├── notebooks/
 │   ├── capstone/                 # Core capstone notebooks and scripts
-│   │   ├── Models_in_Google_Colab_Model_Building_BD_V1.ipynb
-│   │   ├── Capstone_AWS_Data_Cleaning_BD.ipynb
-│   │   ├── Step_8_Method_2_Memory_Batching.ipynb
-│   │   ├── Step_8_Method_3_Ray_Parallel.ipynb
-│   │   └── data_cleaning_merging_in_google_colab.py
+│   │   ├── 01_aws_data_cleaning.ipynb
+│   │   ├── 02_model_building.ipynb
+│   │   ├── 03_memory_batching.ipynb
+│   │   ├── 04_ray_parallel.ipynb
+│   │   └── 05_data_cleaning_merging.py
 │   └── mini-projects/            # Supporting MLE mini-projects
-│       ├── Student_MLE_MiniProject_Customer_ChurnModel_BD.ipynb
-│       ├── Student_MLE_MiniProject_Flask_BD.ipynb
-│       ├── Student_MLE_MiniProject_ML_BD.ipynb
-│       └── Student_MLE_MiniProject_Recommendation_Engines_BD.ipynb
+│       ├── 01_ml_fundamentals.ipynb
+│       ├── 02_customer_churn_model.ipynb
+│       ├── 03_flask_deployment.ipynb
+│       └── 04_recommendation_engines.ipynb
 ├── datasets/                     # Dataset acquisition examples (NCBI, ENA, CDC)
 ├── research/                     # Embedding research examples (Word2Vec, K-mer, Virtifier)
 ├── Dockerfile
