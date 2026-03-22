@@ -26,8 +26,14 @@ MLE-Capstone-BD/
 │       ├── 02_customer_churn_model.ipynb
 │       ├── 03_flask_deployment.ipynb
 │       └── 04_recommendation_engines.ipynb
-├── datasets/                     # Data acquisition scripts (NCBI, ENA, CDC)
-├── research/                     # Embedding experiments (Word2Vec, K-mer, Virtifier)
+├── datasets/                     # Data acquisition scripts
+│   ├── 01_ncbi_dataset.py
+│   ├── 02_ena_dataset.py
+│   └── 03_cdc_dataset.py
+├── research/                     # Embedding experiments
+│   ├── 01_word2vec.py
+│   ├── 02_kmer2vec.py
+│   └── 03_virtifier.py
 ├── Dockerfile
 ├── render.yaml
 └── requirements.txt
