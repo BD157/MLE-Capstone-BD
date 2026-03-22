@@ -8,3 +8,6 @@ numpy
 streamlit
 requests
 ray
+joblib
+pytest
+httpx
