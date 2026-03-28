@@ -9,3 +9,6 @@ __pycache__/
 models/*.model
 models/*.model.*
 models/*.pkl
+*.model
+*.model.wv.vectors.npy
+*.pkl
